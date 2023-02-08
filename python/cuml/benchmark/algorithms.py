@@ -271,6 +271,7 @@ def all_algorithms():
             name="LinearRegression",
             accepts_labels=True,
             accuracy_function=metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.linear_model.ElasticNet,
@@ -279,6 +280,7 @@ def all_algorithms():
             name="ElasticNet",
             accepts_labels=True,
             accuracy_function=metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.linear_model.Lasso,
@@ -287,6 +289,7 @@ def all_algorithms():
             name="Lasso",
             accepts_labels=True,
             accuracy_function=metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.linear_model.Ridge,
@@ -295,6 +298,7 @@ def all_algorithms():
             name="Ridge",
             accepts_labels=True,
             accuracy_function=metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.linear_model.LogisticRegression,
@@ -322,6 +326,7 @@ def all_algorithms():
             name="RandomForestRegressor",
             accepts_labels=True,
             accuracy_function=metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.manifold.TSNE,
@@ -378,6 +383,7 @@ def all_algorithms():
             name="SVR-RBF",
             accepts_labels=True,
             accuracy_function=cuml.metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.svm.SVR,
@@ -387,6 +393,7 @@ def all_algorithms():
             name="SVR-Linear",
             accepts_labels=True,
             accuracy_function=cuml.metrics.r2_score,
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.neighbors.KNeighborsClassifier,
@@ -406,6 +413,7 @@ def all_algorithms():
             name="KNeighborsRegressor",
             accepts_labels=True,
             accuracy_function=cuml.metrics.r2_score
+            dataset_name="regression",
         ),
         AlgorithmPair(
             sklearn.naive_bayes.MultinomialNB,
