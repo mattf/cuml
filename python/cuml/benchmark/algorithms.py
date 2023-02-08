@@ -390,7 +390,7 @@ def all_algorithms():
             cuml_args={},
             name="KNeighborsClassifier",
             accepts_labels=True,
-            accuracy_function=cuml.metrics.accuracy_score
+            accuracy_function=cuml.metrics.accuracy_score,
         ),
         AlgorithmPair(
             sklearn.neighbors.KNeighborsRegressor,
