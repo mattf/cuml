@@ -59,7 +59,7 @@ class SpeedupComparisonRunner:
         self,
         bench_rows,
         bench_dims,
-        dataset_name="blobs",
+        dataset_name=None,
         input_type="numpy",
         n_reps=1,
     ):
@@ -83,7 +83,7 @@ class SpeedupComparisonRunner:
         verbose=False,
     ):
         data = datagen.gen_data(
-            self.dataset_name, self.input_type, n_samples, n_features,
+            self.dataset_name if self.dataset_name else algo_pair.dataset_name, self.input_type, n_samples, n_features,
             dtype=dtype, **dataset_param_overrides
         )
 
@@ -194,7 +194,7 @@ class AccuracyComparisonRunner(SpeedupComparisonRunner):
         self,
         bench_rows,
         bench_dims,
-        dataset_name="blobs",
+        dataset_name=None,
         input_type="numpy",
         test_fraction=0.10,
         n_reps=1,
@@ -218,7 +218,7 @@ class AccuracyComparisonRunner(SpeedupComparisonRunner):
         verbose=False,
     ):
         data = datagen.gen_data(
-            self.dataset_name,
+            self.dataset_name if self.dataset_name else algo_pair.dataset_name,
             self.input_type,
             n_samples,
             n_features,
@@ -328,7 +328,7 @@ def run_variations(
     algos : str or list
       Name of algorithms to run and evaluate
     dataset_name : str
-      Name of dataset to use
+      Name of dataset to use, overrides default for algorithm
     bench_rows : list of int
       Dataset row counts to test
     bench_dims : list of int

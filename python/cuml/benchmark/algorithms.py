@@ -88,6 +88,8 @@ class AlgorithmPair:
        Function that returns a scalar representing accuracy
     bench_func : custom function to perform fit/predict/transform
                  calls.
+    dataset_name : str
+       Dataset to use for the algorithm
     """
 
     def __init__(
@@ -105,6 +107,7 @@ class AlgorithmPair:
         bench_func=fit,
         setup_cpu_func=None,
         setup_cuml_func=None,
+        dataset_name="blobs",
     ):
         if name:
             self.name = name
@@ -123,6 +126,7 @@ class AlgorithmPair:
         self.cuml_data_prep_hook = cuml_data_prep_hook
         self.accuracy_function = accuracy_function
         self.tmpdir = tempfile.mkdtemp()
+        self.dataset_name = dataset_name
 
     def __str__(self):
         return "AlgoPair:%s" % (self.name)
