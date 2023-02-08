@@ -313,6 +313,7 @@ def all_algorithms():
             cpu_data_prep_hook=_labels_to_int_hook,
             cuml_data_prep_hook=_labels_to_int_hook,
             accuracy_function=metrics.accuracy_score,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             sklearn.ensemble.RandomForestRegressor,
@@ -337,6 +338,7 @@ def all_algorithms():
             name="MBSGDClassifier",
             accepts_labels=True,
             accuracy_function=cuml.metrics.accuracy_score,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             sklearn.svm.SVC,
@@ -346,6 +348,7 @@ def all_algorithms():
             name="SVC-RBF",
             accepts_labels=True,
             accuracy_function=cuml.metrics.accuracy_score,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             sklearn.svm.SVC,
@@ -355,6 +358,7 @@ def all_algorithms():
             name="SVC-Linear",
             accepts_labels=True,
             accuracy_function=cuml.metrics.accuracy_score,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             sklearn.svm.LinearSVC,
@@ -391,6 +395,7 @@ def all_algorithms():
             name="KNeighborsClassifier",
             accepts_labels=True,
             accuracy_function=cuml.metrics.accuracy_score,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             sklearn.neighbors.KNeighborsRegressor,
@@ -427,6 +432,7 @@ def all_algorithms():
             cpu_data_prep_hook=_treelite_format_hook,
             accuracy_function=_treelite_fil_accuracy_score,
             bench_func=predict,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             treelite,
@@ -444,6 +450,7 @@ def all_algorithms():
             setup_cuml_func=_build_fil_skl_classifier,
             accuracy_function=_treelite_fil_accuracy_score,
             bench_func=predict,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             umap.UMAP if has_umap() else None,
