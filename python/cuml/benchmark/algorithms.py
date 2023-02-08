@@ -368,6 +368,7 @@ def all_algorithms():
             name="LinearSVC",
             accepts_labels=True,
             accuracy_function=cuml.metrics.accuracy_score,
+            dataset_name="classification",
         ),
         AlgorithmPair(
             sklearn.svm.SVR,
